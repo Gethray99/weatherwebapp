@@ -21,7 +21,7 @@ const styles = {
     top: '100px',
     right: '24px',
     width: '220px',
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     borderRadius: '12px',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
     padding: '16px',
