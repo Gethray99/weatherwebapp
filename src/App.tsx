@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
-    console.log("API Key:", apiKey);
+    // console.log("API Key:", apiKey);
     fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Colombo`)
       .then(res => res.json())
       .then(data => {
@@ -33,7 +33,7 @@ function App() {
       <div style={{ position: 'relative' }}>
        <MapView />  
         <div style={{ position: 'absolute', top: 100, left: 50 }}>
-           <WeatherCard weather={weather} />
+           {weather && <WeatherCard weather={weather} />}
         </div>
       </div>
     </>

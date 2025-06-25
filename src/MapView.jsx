@@ -16,7 +16,7 @@ const center = {
 
 function MapView() {
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-  console.log("✅ Loaded API Key:", apiKey);
+  /*console.log("✅ Loaded API Key:", apiKey);*/
 
   return (
     <LoadScript
@@ -29,7 +29,7 @@ function MapView() {
         center={center}
         zoom={10}
       >
-        <Marker position={center} />
+      <Marker position={center} />
       </GoogleMap>
     </LoadScript>
   );
