@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from "./Header";
 import WeatherCard from "./WeatherCard";
+import MapView from "./MapView";
 
 function App() {
 
@@ -29,8 +30,11 @@ function App() {
   return (
     <>
       <Header />
-      <div style= {{paddingTop: '10px', padding: '16px'}}>
-        {weather && <WeatherCard weather={weather} />}
+      <div style={{ position: 'relative' }}>
+       <MapView />  
+        <div style={{ position: 'absolute', top: 100, left: 50 }}>
+           <WeatherCard weather={weather} />
+        </div>
       </div>
     </>
   )

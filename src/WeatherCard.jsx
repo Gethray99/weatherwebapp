@@ -13,7 +13,7 @@ function WeatherCard({ weather }) {
       <p>☀️ UV Index: {weather.uv}</p>
     </div>
   );
-}
+} 
 
 const styles = {
   card: {
