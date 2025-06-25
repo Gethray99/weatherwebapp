@@ -17,6 +17,7 @@ function App() {
         setWeather({
           icon: `https:${data.current.condition.icon}`,
           condition: data.current.condition.text,
+          location: data.location.name,
           temp: data.current.temp_c,
           humidity: data.current.humidity,
           wind: data.current.wind_kph,

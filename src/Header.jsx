@@ -28,9 +28,9 @@ const styles = {
     top: 0,
     left: 0,
     width: '100%',
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     borderRadius: '0 0 12px 12px',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.1)',
     padding: '16px 32px',
     display: 'flex',
     alignItems: 'center',
@@ -56,14 +56,14 @@ const styles = {
     fontSize: '1rem',
     borderRadius: '8px',
     border: '1px solid #ccc',
-    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0 1px 3px rgba(255, 255, 255, 0.1)',
     pointerEvents: 'auto', 
   },
   title: {
     margin: 0,
     fontSize: '1.5rem',
     fontWeight: 600,
-    color: '#333',
+    color: '#e0e0e0',
   },
 };
 

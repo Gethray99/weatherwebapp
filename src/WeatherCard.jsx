@@ -7,6 +7,7 @@ function WeatherCard({ weather }) {
         style={styles.icon}
       />
       <p><strong>{weather.condition}</strong></p>
+      <p><strong>📍 Location:</strong> {weather.location}</p>
       <p>🌡 Temp: {weather.temp}°C</p>
       <p>💧 Humidity: {weather.humidity}%</p>
       <p>🌬 Wind: {weather.wind} km/h</p>

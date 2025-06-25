@@ -9,11 +9,11 @@ function MapView({ location }) {
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   return (
-    <LoadScript googleMapsApiKey={apiKey}>
+    <LoadScript googleMapsApiKey={apiKey} >
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={location}
-        zoom={10}
+        zoom={13}
       >
         <Marker position={location} />
       </GoogleMap>
