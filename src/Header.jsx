@@ -1,4 +1,10 @@
-function Header() {
+function Header({ onSearch }) {
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      onSearch(e.target.value);
+    }
+  };
+
   return (
     <header style={styles.header}>
       <div style={styles.left}>
@@ -9,6 +15,7 @@ function Header() {
           type="text"
           placeholder="Search your city"
           style={styles.searchInput}
+          onKeyDown={handleKeyDown}
         />
       </div>
     </header>
@@ -59,5 +66,6 @@ const styles = {
     color: '#333',
   },
 };
+
 
 export default Header;
