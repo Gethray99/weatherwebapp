@@ -19,7 +19,7 @@ function App() {
     fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${searchTerm || "Colombo"}`)
       .then(res => {
         if (!res.ok){
-          throw new Error('Network response was not ok');
+          //throw new Error('Network response was not ok');
           alert("Failed to fetch weather data. Please Check your location and Try again.");
           setLoading(false);
         }
@@ -30,16 +30,14 @@ function App() {
           icon: `https:${data.current.condition.icon}`,
           condition: data.current.condition.text,
           location: data.location.name,
+          country: data.location.country,
           temp: data.current.temp_c,
           humidity: data.current.humidity,
           wind: data.current.wind_kph,
-          uv: data.current.uv
+          uv: data.current.uv,
+          cloud_percentage: data.current.cloud,
+          percenption_amount_mm: data.current.precip_mm
         });
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Error fetching weather data:", err);
-        setError("Failed to fetch weather data. Please Check your location and Try again.");
         setLoading(false);
       });
   }, [location]);
@@ -48,7 +46,12 @@ function App() {
     setSearchTerm(term);
     const geoApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${term}&key=${geoApiKey}`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok){
+          alert("Failed to fetch location data. Please Check your internet connection and Try again.");
+        }
+        return res.json();
+      })
       .then(data => {
         if (data.results && data.results.length > 0) {
           const coords = data.results[0].geometry.location;
@@ -79,8 +82,7 @@ function App() {
                         <PuffLoader color="black" size={150} />
                       </div>
                     )}
-          {error && <div className="error">{error}</div>}
-          {weather && !loading && !error && <WeatherCard weather={weather} />}
+          {weather && !loading && <WeatherCard weather={weather} />}
         </div>
       </div>
     </>
