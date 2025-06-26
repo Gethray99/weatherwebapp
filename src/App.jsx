@@ -55,7 +55,7 @@ function App() {
           const coords = data.results[0].geometry.location;
           setLocation({ lat: coords.lat, lng: coords.lng });
         } else {
-          alert("Location not found.");
+          alert("Location not found in the map.");
         }
       });
   };
