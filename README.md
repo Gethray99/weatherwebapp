@@ -1,21 +1,7 @@
-# React + TypeScript + Vite
+- You can search a city and gets its curent weather details. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Location of your searched city is displayed on google maps so you can have clear idea of the location and search more cities near major cities when the precise name or location is unknown. 
 
-While this project uses React, Vite supports many popular JS frameworks. [See all the supported frameworks](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+- Even if you misspell a city name while searching, Google Maps and the Weather API will show the most accurate matching location.
 
-## Deploy Your Own
-
-Deploy your own Vite project with Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/framework-boilerplates/vite-react&template=vite-react)
-
-_Live Example: https://vite-react-example.vercel.app_
-
-### Deploying From Your Terminal
-
-You can deploy your new Vite project with a single command from your terminal using [Vercel CLI](https://vercel.com/download):
-
-```shell
-$ vercel
-```
+- If the searched location does not have a matching location in google maps or weather api, it will popup alert messages.
