@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./Header";
 import WeatherCard from "./WeatherCard";
 import MapView from "./MapView";
-import { ClipLoader } from 'react-spinners';
+import { PuffLoader } from 'react-spinners';
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -20,6 +20,7 @@ function App() {
       .then(res => {
         if (!res.ok){
           throw new Error('Network response was not ok');
+          alert("Failed to fetch weather data. Please Check your location and Try again.");
           setLoading(false);
         }
         return res.json();
@@ -64,7 +65,20 @@ function App() {
       <div style={{ position: 'relative' }}>
         <MapView location={location} />
         <div style={{ position: 'absolute', top: 100, left: 50 }}>
-          {loading && <ClipLoader color="#ffffff" size={50} loading={loading} />}
+          {loading && (
+                      <div style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100vw',
+                        height: '100vh',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}>
+                        <PuffLoader color="black" size={150} />
+                      </div>
+                    )}
           {error && <div className="error">{error}</div>}
           {weather && !loading && !error && <WeatherCard weather={weather} />}
         </div>
