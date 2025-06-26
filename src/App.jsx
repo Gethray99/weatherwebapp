@@ -38,7 +38,7 @@ function App() {
         });
         setLoading(false);
       });
-  }, [location]);
+  }, [searchTerm]);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
