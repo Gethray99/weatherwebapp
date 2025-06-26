@@ -38,7 +38,7 @@ const styles = {
     zIndex: 1000,
   },
   left: {
-    flexShrink: 0, 
+    flexShrink: 1, 
   },
   center: {
     position: 'absolute',
