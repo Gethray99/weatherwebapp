@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Header from "./Header";
+import Header from './Header';
 import WeatherCard from "./WeatherCard";
 import MapView from "./MapView";
 import { PuffLoader } from 'react-spinners';
@@ -9,13 +9,11 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [location, setLocation] = useState({ lat: 6.9271, lng: 79.8612 });
-  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
     setLoading(true);
-    setError(null);
     fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${searchTerm || "Colombo"}`)
       .then(res => {
         if (!res.ok){
